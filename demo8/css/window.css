@@ -1,0 +1,76 @@
+.window_boundingBox{
+	position: fixed;
+	border: 1px solid #000;
+	width: 500px;
+	height: 300px;
+	left: 50%;
+	margin-left: -250px;
+	top: 100px;
+	box-shadow: 0 0 12px rgba(0,0,0,5);
+}
+.window_boundingBox input{
+	width: 100px;
+	position: absolute;
+	bottom: 10px;
+	left: 50%;
+	margin-left: -50px;
+}
+.window_header{
+	background: #333;
+	color: #FFFFFF;
+	text-align: center;
+	padding: 5px;
+	font-size: 20px;
+}
+.window_body{
+	padding: 10px;
+}
+.window_closeBtn{
+	position: absolute;
+	right: 0;
+	top: 0;
+	padding: 5px 10px;
+	font-size: 20px;
+	background: blue;
+	color: #FFFFFF;
+	cursor: pointer;
+}
+.window_alertBtn{
+	width: 100px;
+	position: absolute;
+	bottom: 10px;
+	left: 50%;
+	margin-left: -50px;
+}
+/*skin*/
+.window_skin_a .window_boundingBox{
+	box-shadow: none;
+	border: 10px solid rgba(0,0,0,.3);
+	border-radius: 8px;
+	
+}
+.window_skin_a .window_footer input{
+	width: 50px;
+	left: auto;
+	right: 20px;
+	margin-left: 0;
+	background: blue;
+	color: #FFFFFF;
+}
+.window_skin_a .window_header{
+	background: red;
+	text-align: left;
+	padding: 10px;
+	font-weight: bold;
+}
+.window_skin_a .window_closeBtn{
+	width: 45px;
+	height: 45px;
+	border-radius: 45px;
+	line-height: 45px;
+	padding: 0;
+	font-weight: bold;
+	right: -15px;
+	top: -15px;
+	padding: 10px;
+}

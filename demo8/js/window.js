@@ -9,13 +9,13 @@ define(['jquery'],function($){
 			title: '提示',
 			hasCloseBtn: false,
 			handlerCloseBtn: null,
+			Skin: null
 		}
 	}
 	
 	Window.prototype = {
 		alert:function(cfg){
 			var CFG = $.extend(this.cfg,cfg);
-			
 			var boundingBox = $(
 				'<div class="window_boundingBox">'+
 					'<div class="window_header">'+CFG.title+'</div>'+
@@ -26,7 +26,6 @@ define(['jquery'],function($){
 				btn = boundingBox.find(".window_footer input");
 			    boundingBox.appendTo('body');
 				btn.click(function(){
-					CFG.handler && CFG.handler();
 					boundingBox.remove();
 				})
 				
@@ -43,6 +42,9 @@ define(['jquery'],function($){
 						CFG.handlerCloseBtn && CFG.handlerCloseBtn();
 						boundingBox.remove();
 					})
+				}
+				if(CFG.Skin){
+					boundingBox.addClass(CFG.Skin);
 				}
 		},
 		confirm:function(){
