@@ -14,7 +14,11 @@ require(['jquery','window'],function($,w){
 			width: 300,
 			height: 300,
 			y: 50,
-			title: '菜单'
+			title: '菜单',
+			hasCloseBtn: true,
+			handlerCloseBtn: function(){
+				alert('xxx');
+			}
 		})
 	})
 })

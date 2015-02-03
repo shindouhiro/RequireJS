@@ -6,7 +6,9 @@ define(['jquery'],function($){
 			height: 500,
 			content: '',
 			handler: null,
-			title: '提示'
+			title: '提示',
+			hasCloseBtn: false,
+			handlerCloseBtn: null
 		}
 	}
 	
@@ -23,7 +25,6 @@ define(['jquery'],function($){
 				btn = boundingBox.find(".window_footer input");
 			    boundingBox.appendTo('body');
 				btn.click(function(){
-					CFG.handler && CFG.handler();
 					boundingBox.remove();
 				})
 				
@@ -33,6 +34,14 @@ define(['jquery'],function($){
 					left: (CFG.x || (Window.innerWidth-CFG.width)/2)+"px",
 					top: (CFG.y || (Window.innerHeight-CFG.height)/2)+"px"
 				})
+				if(CFG.hasCloseBtn){
+					var closeBtn = $('<span class="window_closeBtn">X</span>');
+					closeBtn.appendTo(boundingBox);
+					closeBtn.click(function(){
+						CFG.handlerCloseBtn && CFG.handlerCloseBtn();
+						boundingBox.remove();
+					})
+				}
 		},
 		confirm:function(){
 		},
